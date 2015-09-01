@@ -1,0 +1,30 @@
+{% extends '__base__.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block beforehead %}
+        <!-- Codemirror 和 marked 依赖 -->
+        <link rel="stylesheet" href="/static/css/codemirror.css">
+        <script src="/static/js/codemirror/lib/codemirror.js"></script>
+        <script src="/static/js/codemirror/mode/markdown/markdown.js"></script>
+        <script src="/static/js/codemirror/addon/mode/overlay.js"></script>
+        <script src="/static/js/codemirror/mode/xml/xml.js"></script>
+        <script src="/static/js/codemirror/mode/gfm/gfm.js"></script>
+        <script src="/static/js/marked.min.js"></script>
+
+        <!-- HTML 编辑器的 CSS 与 JavaScript -->
+        <link rel="stylesheet" href="/static/uikit/css/components/htmleditor.css">
+        <script src="/static/uikit/js/components/htmleditor.js"></script>
+{% endblock %}
+
+{% block content %}
+        <form class="uk-form uk-form-stacked">
+    	   <div class="uk-htmleditor-code"><textarea data-uk-check-display="1" style="display: none;" data-uk-htmleditor="{maxsplitsize:600, markdown:true}"></textarea>
+		  </div>
+            <div class="uk-form-row">
+                <button type="submit" action="/save" class="uk-button uk-button-primary"><i class="uk-icon-save"></i> 保存</button>
+                <a href="/manage/blogs" class="uk-button"><i class="uk-icon-times"></i> 取消</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

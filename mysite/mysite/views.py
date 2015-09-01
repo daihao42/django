@@ -1,4 +1,7 @@
 from django.shortcuts import render_to_response
 
-def hello(request):
-	return render_to_response('hello.html', {'title': 'dai'})
+def editor(request):
+	return render_to_response('editor.html', 
+		{'title': 'dai',
+		 'action': '/api/blogs'
+		})
