@@ -1,0 +1,31 @@
+{% extends '__base__.html' %}
+
+{% block title %}首页{% endblock %}
+
+{% block beforehead %}
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="o-main">
+    {% for blog in blogs %}
+        <article class="uk-article">
+            <h1 class="uk-article-title"><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h1>
+            <p class="o-meta uk-article-meta">
+                <i class="o-icon uk-icon-calendar-o"></i>
+                发表于{{ blog.created_at|date:"Y-m-d H:i:s" }}
+                <i class="o-icon uk-icon-book"></i>
+            </p>
+            <p>{{blog.content|truncatewords:"5"}}</p>
+        <hr class="uk-article-divider">
+        </article>
+        {% endfor %}
+    </div>
+
+
+
+{% endblock %}
+
+      

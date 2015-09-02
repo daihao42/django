@@ -18,11 +18,15 @@
 {% endblock %}
 
 {% block content %}
-        <form class="uk-form uk-form-stacked">
-    	   <div class="uk-htmleditor-code"><textarea data-uk-check-display="1" style="display: none;" data-uk-htmleditor="{maxsplitsize:600, markdown:true}"></textarea>
+        <form  action="" method="post" class="uk-form uk-form-stacked">
+            {% csrf_token %}
+            <div>
+                <input type="text" name="title" />
+            </div>
+    	   <div class="uk-htmleditor-code"><textarea data-uk-check-display="1" style="display: none;" data-uk-htmleditor="{maxsplitsize:600, markdown:true}" name="content"></textarea>
 		  </div>
             <div class="uk-form-row">
-                <button type="submit" action="/save" class="uk-button uk-button-primary"><i class="uk-icon-save"></i> 保存</button>
+                <button type="submit" class="uk-button uk-button-primary"><i class="uk-icon-save"></i> 保存</button>
                 <a href="/manage/blogs" class="uk-button"><i class="uk-icon-times"></i> 取消</a>
             </div>
         </form>
