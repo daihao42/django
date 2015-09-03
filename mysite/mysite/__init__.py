@@ -1,4 +1,4 @@
-
+#-*-coding:utf-8-*-
 ##to slove no moudule named MySqldb
 ##use pymysql instead of MySqldb
 

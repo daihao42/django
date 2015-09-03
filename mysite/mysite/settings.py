@@ -1,3 +1,4 @@
+#-*-coding:utf-8-*-
 """
 Django settings for mysite project.
 
@@ -12,7 +13,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -83,6 +83,7 @@ DATABASES = {
         'PASSWORD':'324426',
         'HOST':'127.0.0.1',
         'PORT':'3306',
+        'CHARSET': 'utf-8',
     }
 }
 
@@ -108,3 +109,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+####中文乱码###
+FILE_CHARSET = 'utf-8'
+DEFAULT_CHARSET = 'utf-8'

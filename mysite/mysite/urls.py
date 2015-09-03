@@ -1,3 +1,4 @@
+#-*-coding:utf-8-*-
 """mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -22,4 +23,6 @@ urlpatterns = [
     url(r'^editor/$', views.editor),
     url(r'^blog/$', views.blog),
     url(r'^signin/$', views.signin),
+    url(r'^register/$', views.register),
+    url(r'^api/uploader/(.*)/$', views.head_img_upload)
 ]
