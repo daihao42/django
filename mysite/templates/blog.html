@@ -9,23 +9,34 @@
 
 {% block content %}
 
-    <div class="o-main">
+<div class="o-main">
+    <table cellspacing="0" cellpadding="0">
     {% for blog in blogs %}
-        <article class="uk-article">
-            <h1 class="uk-article-title"><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h1>
-            <p class="o-meta uk-article-meta">
+    <tbody cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <img src="/static/image/1.jpg" width="50" alt="GTP"/>
+            </td>
+            <th class="common">
+                <article>
+                <h1 class="uk-article-title"><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h1>
+                <p>{{blog.content|slice:"10"}}</p>
+                </article>
+            </th>
+            <td class="by">
+                <cite class="mbm"><a rel="nofollow">梦の小子</a></cite>
+                <span >
+                <p class="o-meta uk-article-meta">
                 <i class="o-icon uk-icon-calendar-o"></i>
                 发表于{{ blog.created_at|date:"Y-m-d H:i:s" }}
                 <i class="o-icon uk-icon-book"></i>
-            </p>
-            <p>{{blog.content|truncatewords:"5"}}</p>
-        <hr class="uk-article-divider">
-        </article>
+                </p></span>
+            </td>
+        </tr>
+    </tbody>
         {% endfor %}
-    </div>
-
-
-
+    </table>
+</div>
 {% endblock %}
 
       
